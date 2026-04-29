@@ -2,8 +2,16 @@ import React, { useEffect, useState } from 'react';
 import $ from 'jquery';
 import 'datatables.net-dt';
 
-export const Page3 = () => {
-  const [users, setUsers] = useState([]);
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+}
+
+const Page3 = () => {
+  // 2. Khai báo kiểu cho useState là User[]
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
     // Giả lập gọi API
